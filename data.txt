@@ -1,0 +1,6 @@
+﻿C,Ivan,Ivanov,ivan@gmail.com
+P,Teddy,50.0,soft,60
+P,Lego,1200.0,constructor,5
+P,Lego3,1200.0,constructor,6
+P,Lego5,1200.0,constructor,9
+P,Lego9,1200.0,constructor,7
