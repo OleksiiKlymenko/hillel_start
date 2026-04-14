@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 style="text-align: center;">Команди Формули-1</h1>
+
+    <table border="1" style="width: 100%; border-collapse: collapse;">
+        <thead>
+            <tr style="background: #f2f2f2;">
+                <th>Назва команди</th>
+                <th>Пілот</th>
+                <th>Позиція</th>
+                <th>Ціна ($)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for team in teams %}
+            <tr>
+                <td>{{ team.name }}
+                </td>
+                <td>
+        <a href="/drivers/{{ team.driver }}">{{ team.driver }}</a>
+                </td>
+                <td>{{ team.best_position }}</td>
+                <td>{{ team.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
