@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Профіль: {{ driver.driver }}{% endblock %}
+
+{% block content %}
+<div style="max-width: 600px; margin: 50px auto; padding: 30px; border: 1px solid #ddd; border-radius: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+    <h2 style="color: #e10600;">Картка гонщика</h2>
+    <hr>
+    <p style="font-size: 1.5rem;"><strong>ПІБ:</strong> {{ driver.driver }}</p>
+    <p style="font-size: 1.2rem;"><strong>Команда:</strong> {{ driver.name }}</p>
+    <p><strong>Позиція в команді:</strong> {{ driver.best_position }}</p>
+    
+    <div style="margin-top: 20px;">
+        <a href="/f1_teams" style="color: blue; text-decoration: underline;">← Повернутися до списку</a>
+    </div>
+</div>
+{% endblock %}
