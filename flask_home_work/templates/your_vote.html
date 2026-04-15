@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="max-width: 500px; margin: 50px auto; text-align: center; font-family: sans-serif;">
+    <h2>🏆 Твій прогноз на 2026</h2>
+
+    <form action="/check_winner" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+
+        <select name="selected_team" required style="padding: 10px;">
+            <option value="" disabled selected>Обери команду</option>
+            {% set seen = [] %}
+            {% for team in teams %}
+                {% if team.name not in seen %}
+                    <option value="{{ team.name }}">{{ team.name }}</option>
+                    {% set _ = seen.append(team.name) %}
+                {% endif %}
+            {% endfor %}
+        </select>
+
+        <select name="selected_driver" required style="padding: 10px;">
+            <option value="" disabled selected>Обери гонщика</option>
+            {% for team in teams %}
+                <option value="{{ team.driver }}">{{ team.driver }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit" style="background: #e10600; color: white; padding: 12px; border: none; cursor: pointer; font-weight: bold; border-radius: 5px;">
+            ПРИЙНЯТИ
+        </button>
+    </form>
+</div>
+{% endblock %}
